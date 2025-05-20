@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:attribute_name",
+ "creation": "2025-05-20 00:50:35.722682",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "attribute_name",
+  "numeric_values",
+  "column_break_xyuv",
+  "disabled",
+  "section_break_hmbs",
+  "item_attribute_values"
+ ],
+ "fields": [
+  {
+   "fieldname": "attribute_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Attribute Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "item_attribute_values",
+   "fieldtype": "Table",
+   "label": "Item Attribute Values",
+   "options": "Item Attribute Value",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "numeric_values",
+   "fieldtype": "Check",
+   "label": "Numeric Values"
+  },
+  {
+   "fieldname": "column_break_xyuv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "section_break_hmbs",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "links": [],
+ "modified": "2025-05-20 01:46:41.753126",
+ "modified_by": "Administrator",
+ "module": "Product",
+ "name": "Item Attribute",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

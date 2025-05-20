@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-20 17:51:44.852444",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "enabled",
+  "column_break_cphn",
+  "channel",
+  "configs_section",
+  "expo_push_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "channel",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Channel",
+   "options": "Expo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_cphn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "configs_section",
+   "fieldtype": "Section Break",
+   "label": "Configs"
+  },
+  {
+   "depends_on": "eval:doc.channel == 'Expo'",
+   "fieldname": "expo_push_token",
+   "fieldtype": "Data",
+   "label": "Expo Push Token",
+   "mandatory_depends_on": "eval:doc.channel == 'Expo'"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-20 17:53:59.646991",
+ "modified_by": "Administrator",
+ "module": "Electronic Erp",
+ "name": "Mobile Push Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

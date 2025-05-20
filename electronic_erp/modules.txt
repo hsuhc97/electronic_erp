@@ -1,1 +1,6 @@
 Electronic Erp
+Stock
+Buying
+Selling
+Product
+Utilities

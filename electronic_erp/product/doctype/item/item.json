@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item_code",
+ "creation": "2025-05-20 00:19:38.462799",
+ "description": "A Product or a Service that is bought, sold or kept in stock.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "item_group",
+  "column_break_gebb",
+  "is_stock_item",
+  "has_variants",
+  "image",
+  "section_break_feol",
+  "description",
+  "versions_tab",
+  "table_ylag",
+  "variants_tab",
+  "variant_of",
+  "attributes"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "search_index": 1
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item Group",
+   "options": "Item Group",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.has_variants == 1",
+   "fieldname": "versions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Versions"
+  },
+  {
+   "fieldname": "table_ylag",
+   "fieldtype": "Table",
+   "options": "Item Version"
+  },
+  {
+   "fieldname": "column_break_gebb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_stock_item",
+   "fieldtype": "Check",
+   "label": "Maintain Stock"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!doc.variant_of",
+   "description": "If this item has variants, then it cannot be selected in sales orders etc.",
+   "fieldname": "has_variants",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Has Variants"
+  },
+  {
+   "fieldname": "variants_tab",
+   "fieldtype": "Tab Break",
+   "label": "Variants"
+  },
+  {
+   "depends_on": "eval:doc.has_variants == 0",
+   "description": "If item is a variant of another item then description, image, pricing, taxes etc will be set from the template unless explicitly specified",
+   "fieldname": "variant_of",
+   "fieldtype": "Link",
+   "label": "Variant Of",
+   "options": "Item",
+   "set_only_once": 1
+  },
+  {
+   "depends_on": "eval:(doc.has_variants || doc.variant_of)",
+   "fieldname": "attributes",
+   "fieldtype": "Table",
+   "label": "Variant Attributes",
+   "options": "Item Variant Attribute"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "image"
+  },
+  {
+   "fieldname": "section_break_feol",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "image",
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2025-05-20 01:56:05.972776",
+ "modified_by": "Administrator",
+ "module": "Product",
+ "name": "Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "search_fields": "item_name,description,item_group",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "item_name"
+}

@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-20 01:57:10.839524",
+ "description": "Supplier of Goods or Services.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "supplier_name",
+  "country",
+  "column_break_dtef",
+  "supplier_type",
+  "image",
+  "defaults_section",
+  "default_currency",
+  "internal_supplier_section",
+  "is_internal_supplier",
+  "grades_tab",
+  "table_isqu"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "SUP-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_dtef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_type",
+   "fieldtype": "Select",
+   "label": "Supplier Type",
+   "options": "Company\nIndividual"
+  },
+  {
+   "fieldname": "defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Billing Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "internal_supplier_section",
+   "fieldtype": "Section Break",
+   "label": "Internal Supplier"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_internal_supplier",
+   "fieldtype": "Check",
+   "label": "Is Internal Supplier"
+  },
+  {
+   "fieldname": "grades_tab",
+   "fieldtype": "Tab Break",
+   "label": "Grades"
+  },
+  {
+   "fieldname": "table_isqu",
+   "fieldtype": "Table",
+   "options": "Supplier Grade"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2025-05-20 05:17:06.639303",
+ "modified_by": "Administrator",
+ "module": "Buying",
+ "name": "Supplier",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "supplier_name"
+}

@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-20 01:15:28.886125",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "do_not_update_variants",
+  "copy_fields_to_variant_section",
+  "fields"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "do_not_update_variants",
+   "fieldtype": "Check",
+   "label": "Do not update variants on save"
+  },
+  {
+   "fieldname": "copy_fields_to_variant_section",
+   "fieldtype": "Section Break",
+   "label": "Copy Fields to Variant"
+  },
+  {
+   "fieldname": "fields",
+   "fieldtype": "Table",
+   "label": "Fields",
+   "options": "Variant Field"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-05-20 01:16:19.052553",
+ "modified_by": "Administrator",
+ "module": "Product",
+ "name": "Item Variant Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
