@@ -1,6 +1,6 @@
 Electronic Erp
-Stock
 Buying
 Selling
 Product
+Stock
 Utilities
