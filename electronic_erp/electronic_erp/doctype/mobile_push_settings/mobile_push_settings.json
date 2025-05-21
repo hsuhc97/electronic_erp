@@ -6,8 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "user",
-  "enabled",
+  "app",
   "column_break_cphn",
+  "enabled",
   "channel",
   "configs_section",
   "expo_push_token"
@@ -49,12 +50,17 @@
    "fieldtype": "Data",
    "label": "Expo Push Token",
    "mandatory_depends_on": "eval:doc.channel == 'Expo'"
+  },
+  {
+   "fieldname": "app",
+   "fieldtype": "Data",
+   "label": "App"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-20 17:53:59.646991",
+ "modified": "2025-05-21 19:34:01.570244",
  "modified_by": "Administrator",
  "module": "Electronic Erp",
  "name": "Mobile Push Settings",
