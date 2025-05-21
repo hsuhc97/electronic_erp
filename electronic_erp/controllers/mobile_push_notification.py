@@ -12,7 +12,7 @@ def enqueue_mobile_push_notification(message_content):
     )
 
 def send_mobile_push_notification(message_content, start = 0):
-    message = frappe.get_doc("Message Content")
+    message = frappe.get_doc("Message Content", message_content)
     if message is None:
         return
 
