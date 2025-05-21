@@ -20,8 +20,7 @@ def send_mobile_push_notification(message_content, start = 0):
     users = frappe.db.get_list("User",
         fields=['name', 'full_name'],
         start=start,
-        page_length=number_of_users,
-        as_list=True
+        page_length=number_of_users
     )
 
     if not users:
