@@ -5,18 +5,77 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_lxal"
+  "message_content",
+  "sender",
+  "recipient",
+  "recipient_name",
+  "column_break_npsj",
+  "status",
+  "title",
+  "content"
  ],
  "fields": [
   {
-   "fieldname": "section_break_lxal",
-   "fieldtype": "Section Break"
+   "fieldname": "message_content",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Message Content",
+   "options": "Message Content",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sender",
+   "fieldtype": "Link",
+   "label": "Sender",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recipient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Recipient",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_npsj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unread\nRead"
+  },
+  {
+   "fetch_from": "message_content.title",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "message_content.content",
+   "fieldname": "content",
+   "fieldtype": "Small Text",
+   "label": "Content",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recipient.full_name",
+   "fieldname": "recipient_name",
+   "fieldtype": "Data",
+   "label": "Recipient Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-20 17:27:08.692280",
+ "modified": "2025-05-21 20:13:16.692568",
  "modified_by": "Administrator",
  "module": "Electronic Erp",
  "name": "Message",
