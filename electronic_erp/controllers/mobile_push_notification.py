@@ -12,8 +12,8 @@ def enqueue_mobile_push_notification(message_content):
     )
 
 def send_mobile_push_notification(message_content, start = 0):
-    message = frappe.get_doc("Message Content", message_content)
-    if message is None:
+    message_content = frappe.get_doc("Message Content", message_content)
+    if message_content is None:
         return
 
     number_of_users = 100
@@ -29,7 +29,7 @@ def send_mobile_push_notification(message_content, start = 0):
     to = []
     for user in users:
         message = frappe.new_doc("Message")
-        message.message_content = message_content
+        message.message_content = message_content.name
         message.recipient = user.name
         message.recipient_name = user.full_name
         message.status = "Unread"
@@ -68,6 +68,6 @@ def send_mobile_push_notification(message_content, start = 0):
     frappe.enqueue(
         "electronic_erp.controllers.mobile_push_notification.send_mobile_push_notification",
         enqueue_after_commit=True,
-        message_content=message_content,
+        message_content=message_content.name,
         start=start + number_of_users
     )
